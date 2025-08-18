@@ -43,7 +43,9 @@ function Main() {
 
   // Update movie info when dropdown changes
   function moviedata(event) {
-    findmovie = moviesList.find((value) => value.movieName === event.currentTarget.value);
+    findmovie = moviesList.find((value) => {
+      return value.movieName === event.currentTarget.value;
+    })//it return {}
     if (findmovie) {
       Movie.textContent = findmovie.movieName;
       moviePriceEl.textContent = `$ ${findmovie.price}`;
