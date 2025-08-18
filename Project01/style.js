@@ -1,4 +1,5 @@
-// Movie data array with name and price
+function Main() {
+  // Movie data array with name and price
 const moviesList = [
   { movieName: "Flash", price: 7 },
   { movieName: "Spiderman", price: 5 },
@@ -120,3 +121,6 @@ cancelBtn.addEventListener("click",(event)=>{
 
     totalPrice.textContent = `$0`;
 })
+
+}
+Main();
