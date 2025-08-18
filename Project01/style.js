@@ -3,6 +3,15 @@ const moviesList = [
   { movieName: "Flash", price: 7 },
   { movieName: "Spiderman", price: 5 },
   { movieName: "Batman", price: 4 },
+  { movieName: "RRR", price: 6 },
+  { movieName: "Pushpa: The Rise", price: 5 },
+  { movieName: "Sarkaru Vaari Paata", price: 5 },
+  { movieName: "Ala Vaikunthapurramuloo", price: 4 },
+  { movieName: "Bhadragiri", price: 3 },
+  { movieName: "Saaho", price: 6 },
+  { movieName: "Jai Lava Kusa", price: 4 },
+  { movieName: "Magadheera", price: 5 },
+  { movieName: "Bommarillu", price: 3 }
 ];
 
 // DOM elements
@@ -85,9 +94,10 @@ proceedBtn.addEventListener("click",(event)=>{
   else{
     alert("Yayy! Your Seats have been booked");
   }
-  selectedSeats.forEach((i)=>{
+  selectedSeats.forEach((i,index)=>{
     availableSeats[i].classList.remove("selected");
     availableSeats[i].classList.add("occupied");
+    availableSeats[i].removeEventListener("click", (e) => selectsets(e, index));
   })
     selectedSeatsHolder.innerHTML = '<span><p>No seat Selected</p></span>';
 
